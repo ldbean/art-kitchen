@@ -8,46 +8,60 @@
   <link href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <link rel="stylesheet" href="/styles/main.css">
-  <script defer src="/scripts/userAuth.js"></script>
+  <link rel="stylesheet" type="text/css" href="/styles/main.css">
+  <script defer src="/scripts/profile.js"></script>
+  <script defer src="/scripts/logout.js"></script>
   <title>Art Kitchen</title>
 </head>
 
-<body class="text-center" id="home">
-  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+<body class="text-center" id="profile-body">
+  <div class="container-sm d-flex p-3 mx-auto flex-column">
     <header class="masthead mb-auto">
       <div class="inner">
         <h3 class="masthead-brand">ArtKitchen</h3>
+        <a class="nav-item" href="/kitchen"><button type="button" class="btn btn-info">Let's Get
+            Cooking!</button></a>
+        <nav class="nav nav-masthead justify-content-center">
+          <a class="nav-link" href="/feed">Feed</a>
+          <a class="nav-link active" href="/profile">Profile</a>
+          <a class="nav-link" id="logout">Logout</a>
+        </nav>
       </div>
     </header>
 
-    <main role="main" class="inner cover">
-      <br><br><br>
-      <h1 class="cover-heading">Feed your creativity.</h1>
-      <h4 class="lead">We'll give you the ingredients for a tasty new creation!</h4>
-      <h6 class="small">Use our word generator to help break through your creative block.</h6>
-      <p class="lead">
-        <form id="userForm">
-          <div class="form-row">
-            <div class="col">
-              <input id="username-input" type="username" name="username" class="form-control new" placeholder="username">
-            </div>
-            <div class="col">
-              <input type="password" name="password" class="form-control new" placeholder="password">
-            </div>
-            <button type="submit" class="ml-1 btn btn-md btn-secondary" id="signup-submit">Sign Up!</button>
+    <main role="main" class="row">
+
+      <aside class="card row" id="user-profile">
+        <div class="row no-gutters"> 
+          <div class="btn-group post-menu">
+          <button id="profile-edit" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+          </button>
+          <div class="dropdown-menu">
+            <button class="dropdown-item" type="button" for="edit" id="user-edit">Edit</button>
           </div>
-        </form>
-        <br>
-
-
-        <section class="row">
-          <div class="col" id="ahaa">
-            <p class="">Already have an account?</p>
-            <a href="#" class="btn btn-sm btn-secondary" id="login">Log in</a>
           </div>
-        </section>
 
+          <div class="col-md-3"> 
+            <img src="http://placebear.com/150/150" class="rounded mx-auto d-block" id="profile-image" alt="...">
+          </div>
+
+          <div class="col-md-9"> 
+            <div class="card-body">
+              
+              <h5 class="card-title" id="username"></h5>
+              <p class="card-text" id="bio"></p>
+            </div>
+          </div>
+
+        </div>
+      </aside>
+
+      <section class="container">
+        <div class="row justify-content-md-center" id="posts">
+
+        </div>
+      </section>
 
     </main>
 
